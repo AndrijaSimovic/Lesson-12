@@ -1,5 +1,5 @@
-const welcome_text = 'Welcome to our coffee shop';
-const working_time = 'We are open 24/7';
+const welcomeText = 'Welcome to our coffee shop';
+const workingTime = 'We are open 24/7';
 
 const coffee = [
     {
@@ -32,4 +32,4 @@ const coffee = [
     }
 ]
 
-export { welcome_text, working_time, coffee };
+export { welcomeText, workingTime, coffee };

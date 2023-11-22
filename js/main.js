@@ -1,38 +1,47 @@
-import { welcome_text, working_time, coffee } from "./constants.js"
+import { welcomeText, workingTime, coffee } from "./constants.js"
 import { elementGenerator } from "./functions.js";
 
 function main() {
-    const welcome_text = elementGenerator('h1');
+    // welcomeText
+    const welcomeTextElement = elementGenerator('h1');
+    welcomeTextElement.innerText = welcomeText;
     const root = document.getElementById('root');
-    root.appendChild(welcome_text);
+    root.appendChild(welcomeTextElement);
 
+    // workingTime
+    const workingTimeElement = elementGenerator('h3');
+    workingTimeElement.innerText = workingTime;
+    root.appendChild(workingTimeElement);
+
+    // #region coffeeList
     coffee.forEach((coffeeItem) => {
 
         const coffeeList = document.getElementById('list');
         coffeeList.classList.add('coffeeList');
 
-        const coffeeItemDiv = document.createElement('li');
+        const coffeeItemDiv = elementGenerator('li');
         coffeeItemDiv.classList.add('row');
         coffeeList.appendChild(coffeeItemDiv);
 
-        const coffeeImage = document.createElement('img');
+        const coffeeImage = elementGenerator('img');
         coffeeImage.src = coffeeItem.image;
         coffeeItemDiv.appendChild(coffeeImage);
         coffeeImage.classList.add('coffeeImage');
 
-        const coffeeInfoDiv = document.createElement('div');
+        const coffeeInfoDiv = elementGenerator('div');
         coffeeInfoDiv.classList.add('column');
         coffeeInfoDiv.classList.add('coffeeInfoDiv')
         coffeeItemDiv.appendChild(coffeeInfoDiv);
 
-        const coffeeInfoDivTitle = document.createElement('h3');
+        const coffeeInfoDivTitle = elementGenerator('h3');
         coffeeInfoDivTitle.innerText = coffeeItem.title;
         coffeeInfoDiv.appendChild(coffeeInfoDivTitle);
 
-        const coffeeInfoDivDescription = document.createElement('p');
+        const coffeeInfoDivDescription = elementGenerator('p');
         coffeeInfoDivDescription.innerText = coffeeItem.description;
         coffeeInfoDiv.appendChild(coffeeInfoDivDescription);
     })
+    // #endregion
 }
 
 main();
