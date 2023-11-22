@@ -5,8 +5,8 @@
 }
 
 .coffeeList {
-border: 2px solid rgba(39, 23, 0, 0.87);
-padding: 5px 10px;
+    border: 2px solid rgba(39, 23, 0, 0.87);
+    padding: 5px 10px;
 }
 
 .row {
@@ -17,4 +17,13 @@ padding: 5px 10px;
 .column {
     display: flex;
     flex-direction: column;
+}
+
+.coffeeImage {
+    width: 200px;
+    height: 150px;
+}
+
+.coffeeInfoDiv {
+    margin-left: 15px;
 }
