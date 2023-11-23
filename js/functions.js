@@ -3,6 +3,10 @@ function elementGenerator(elementName) {
     return newElement;
 }
 
-elementGenerator();
+function doAppendChild(parentElement, childElement) {
+    const parent = document.getElementById(parentElement);
+    const child = document.getElementById(childElement);
+    parent.appendChild(child);
+}
 
-export { elementGenerator };
+export { elementGenerator, doAppendChild };

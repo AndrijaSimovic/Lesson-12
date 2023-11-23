@@ -1,17 +1,15 @@
 import { welcomeText, workingTime, coffee } from "./constants.js"
-import { elementGenerator } from "./functions.js";
+import { elementGenerator, doAppendChild } from "./functions.js";
 
 function main() {
     // welcomeText
     const welcomeTextElement = elementGenerator('h1');
     welcomeTextElement.innerText = welcomeText;
-    const root = document.getElementById('root');
-    root.appendChild(welcomeTextElement);
+    doAppendChild(root, welcomeTextElement);
 
     // workingTime
     const workingTimeElement = elementGenerator('h3');
     workingTimeElement.innerText = workingTime;
-    root.appendChild(workingTimeElement);
 
     // #region coffeeList
     coffee.forEach((coffeeItem) => {
@@ -40,9 +38,22 @@ function main() {
         const coffeeInfoDivDescription = elementGenerator('p');
         coffeeInfoDivDescription.innerText = coffeeItem.description;
         coffeeInfoDiv.appendChild(coffeeInfoDivDescription);
+
+        // roast
+        const index = coffeeItem.minRoastTypeValue;
+        while (index <= coffeeItem.maxRoastTypeValue) {
+            const firstDiv = elementGenerator('div');
+            coffeeInfoDiv.appendChild(firstDiv);
+            firstDiv.classList.add('firstDiv');
+            index ++;
+            if (index <= coffeeItem.roastTypeValue) {
+                firstDiv.class.add('');
+            }
+            index ++;
+        }
     })
     // #endregion
 }
 
 main();
-
+elementGenerator();

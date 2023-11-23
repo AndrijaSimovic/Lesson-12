@@ -6,28 +6,36 @@ const coffee = [
         id: 1,
         title: 'Turkish coffee',
         description: 'Turkish coffee in a serbian way',
-        roastType: '',
+        maxRoastTypeValue: 4,
+        minRoastTypeValue: 1,
+        roastTypeValue: 3,
         image: 'https://adriatictraveller.eu/wp-content/uploads/2022/12/Istanbul_turk-kahvesi_-turkish-coffee-scaled-859x639.jpeg'
     },
     {
         id: 2,
         title: 'Nescafe',
         description: 'Coffee with milk',
-        roastType: '',
+        maxRoastTypeValue: 4,
+        minRoastTypeValue: 1,
+        roastTypeValue: 2,
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmi4qwllX-NMuIoWtoOu_nnNs4u4_3DVfpOg&usqp=CAU'
     },
     {
         id: 3,
         title: 'Espresso',
         description: 'Coffee with or without sugar and milk',
-        roastType: '',
+        maxRoastTypeValue: 4,
+        minRoastTypeValue: 1,
+        roastTypeValue: 1,
         image: 'https://www.thespruceeats.com/thmb/DIUuY3Fj_51rINr-vN4KQD2Js24=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/what-is-espresso-765702-hero-03_cropped-ffbc0c7cf45a46ff846843040c8f370c.jpg'
     },
     {
         id: 4,
         title: 'Cappuccino',
         description: 'Coffee with steamed milk and foam',
-        roastType: '',
+        maxRoastTypeValue: 4,
+        minRoastTypeValue: 1,
+        roastTypeValue: 4,
         image: 'https://methodicalcoffee.com/cdn/shop/articles/cap.jpg?v=1684507364&width=700'
     }
 ]
