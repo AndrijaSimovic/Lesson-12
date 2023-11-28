@@ -41,18 +41,18 @@ function main() {
         setInnerTextToAnElement(coffeeInfoDivDescription, coffeeItem.description)
         doAppendChild(coffeeInfoDiv, coffeeInfoDivDescription);
 
-        // ROAST - to be done
-        // const index = coffeeItem.minRoastTypeValue;
-        // while (index <= coffeeItem.maxRoastTypeValue) {
-        //     const firstDiv = elementGenerator('div');
-        //     coffeeInfoDiv.appendChild(firstDiv);
-        //     firstDiv.classList.add('firstDiv');
-        //     index ++;
-        //     if (index <= coffeeItem.roastTypeValue) {
-        //         firstDiv.class.add('');
-        //     }
-        //     index ++;
-        // }
+        // roastType
+        const index = coffeeItem.minRoastTypeValue;
+        while (index <= coffeeItem.maxRoastTypeValue) {
+            const roastedDiv = elementGenerator('div');
+            classList(roastedDiv, 'roundDiv');
+            if (index <= coffeeItem.roastTypeValue) {
+                classList(roastedDiv, 'roundDivColored')
+            }
+            doAppendChild(coffeeInfoDiv, roastedDiv);
+            index ++;
+            coffeeItem(index); // I don't know why this line of code stands here, I just did it because you did it on your code. I wrote comment here so we don't forget to talk about it next time.
+        }
     })
     // #endregion
 }
