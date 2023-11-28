@@ -4,9 +4,34 @@
     color: rgba(39, 23, 0, 0.87);
 }
 
+.coffeeTitleIconClass {
+    height: 100px;
+    width: 100px;
+    margin: 0px 0px 0px 15px;
+}
+
+.marginLeft5 {
+    margin-left: 5px;
+}
+
+.marginLeft15 {
+    margin-left: 15px;
+}
+
+.marginLeft25 {
+    margin-left: 25px;
+}
+
 .coffeeList {
     border: 2px solid rgba(39, 23, 0, 0.87);
     padding: 5px 10px;
+    width: fit-content;
+    margin: 0px 0px 5px 15px;
+}
+
+.coffeeMenu {
+    margin: 10px 0px 15px 15px;
+    font-size: 23px;
 }
 
 .row {
@@ -22,18 +47,11 @@
 .coffeeImage {
     width: 200px;
     height: 150px;
-}
-
-.marginLeft15 {
     margin-left: 15px;
 }
 
-.marginLeft5 {
-    margin-left: 5px;
-}
-
 .roundDiv {
-    border: 1px solid black;
+    border: 1px solid rgba(39, 23, 0, 0.87);
     border-radius: 9999px;
     width: 20px;
     height: 20px;
@@ -41,9 +59,19 @@
 }
 
 .roundDivColored {
-    border: 1px solid black;
+    border: 1px solid rgba(39, 23, 0, 0.87);
     border-radius: 9999px;
     width: 20px;
     height: 20px;
+    background-color: rgba(39, 23, 0, 0.87);
+}
+
+.link {
+    margin-left: 20px;
     color: rgba(39, 23, 0, 0.87);
+    font-weight: 600;
+}
+
+a:hover {
+    color: rgba(139, 93, 29, 0.87);
 }

@@ -1,5 +1,6 @@
 const welcomeText = 'Welcome to our coffee shop';
 const workingTime = 'We are open 24/7';
+const coffeeMenu = 'Coffee menu:';
 
 const coffee = [
     {
@@ -40,4 +41,4 @@ const coffee = [
     }
 ]
 
-export { welcomeText, workingTime, coffee };
+export { welcomeText, workingTime, coffee, coffeeMenu };
