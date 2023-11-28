@@ -1,47 +1,47 @@
 import { welcomeText, workingTime, coffee } from "./constants.js"
-import { elementGenerator, doAppendChild } from "./functions.js";
+import { elementGenerator, doAppendChild, setInnerTextToAnElement, classList } from "./functions.js";
 
 function main() {
     // welcomeText
     const welcomeTextElement = elementGenerator('h1');
-    welcomeTextElement.innerText = welcomeText;
-    welcomeTextElement.classList.add('marginLeft15');
+    setInnerTextToAnElement(welcomeTextElement, welcomeText)
+    classList(welcomeTextElement, 'marginLeft15');
     doAppendChild(root, welcomeTextElement);
 
     // workingTime
     const workingTimeElement = elementGenerator('h3');
-    workingTimeElement.innerText = workingTime;
-    workingTimeElement.classList.add('marginLeft15');
+    setInnerTextToAnElement(workingTimeElement, workingTime)
+    classList(workingTimeElement, 'marginLeft15');
     doAppendChild(root, workingTimeElement);
 
     // #region coffeeList
     coffee.forEach((coffeeItem) => {
 
         const coffeeList = document.getElementById('list');
-        coffeeList.classList.add('coffeeList', 'marginLeft5');
-
+        classList(coffeeList, 'coffeeList', 'marginLeft5')
         const coffeeItemDiv = elementGenerator('li');
-        coffeeItemDiv.classList.add('row');
+
+        classList(coffeeItemDiv, 'row');
         doAppendChild(coffeeList, coffeeItemDiv);
 
         const coffeeImage = elementGenerator('img');
         coffeeImage.src = coffeeItem.image;
-        coffeeImage.classList.add('coffeeImage');
+        classList(coffeeImage, 'coffeeImage');
         doAppendChild(coffeeItemDiv, coffeeImage);
 
         const coffeeInfoDiv = elementGenerator('div');
-        coffeeInfoDiv.classList.add('column', 'marginLeft15');
+        classList(coffeeInfoDiv, 'column', 'marginLeft15');
         doAppendChild(coffeeItemDiv, coffeeInfoDiv);
 
         const coffeeInfoDivTitle = elementGenerator('h3');
-        coffeeInfoDivTitle.innerText = coffeeItem.title;
+        setInnerTextToAnElement(coffeeInfoDivTitle, coffeeItem.title)
         doAppendChild(coffeeInfoDiv, coffeeInfoDivTitle)
 
         const coffeeInfoDivDescription = elementGenerator('p');
-        coffeeInfoDivDescription.innerText = coffeeItem.description;
+        setInnerTextToAnElement(coffeeInfoDivDescription, coffeeItem.description)
         doAppendChild(coffeeInfoDiv, coffeeInfoDivDescription);
 
-        // ROAST - thing to do
+        // ROAST - to be done
         // const index = coffeeItem.minRoastTypeValue;
         // while (index <= coffeeItem.maxRoastTypeValue) {
         //     const firstDiv = elementGenerator('div');
@@ -58,4 +58,3 @@ function main() {
 }
 
 main();
-elementGenerator();
