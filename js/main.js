@@ -24,11 +24,15 @@ function main() {
     doAppendChild(rootChild, workingTimeElement);
 
     // coffeeMenu
-    const coffeeMenuElement = elementGenerator('h3');
+    const coffeeMenuElement = elementGenerator('h4');
     setInnerTextToAnElement(coffeeMenuElement, coffeeMenu);
     doAppendChild(list, coffeeMenuElement);
     classList(coffeeMenuElement, 'coffeeMenu');
 
+    // search
+    const searchElement = document.getElementById('search');
+    classList(searchElement, 'search');
+    searchElement.value = 'Search coffee...';
 
     // #region coffeeList
     coffee.forEach((coffeeItem) => {
@@ -49,15 +53,20 @@ function main() {
         classList(coffeeInfoDiv, 'column', 'marginLeft15'); // I dont know why the second class doesn't work.
         doAppendChild(coffeeItemDiv, coffeeInfoDiv);
 
-        const coffeeInfoDivTitle = elementGenerator('h3');
+        const coffeeInfoDivTitle = elementGenerator('h2');
         setInnerTextToAnElement(coffeeInfoDivTitle, coffeeItem.title);
         doAppendChild(coffeeInfoDiv, coffeeInfoDivTitle);
         classList(coffeeInfoDivTitle, 'marginLeft15');
 
-        const coffeeInfoDivDescription = elementGenerator('p');
+        const coffeeInfoDivDescription = elementGenerator('h4');
         setInnerTextToAnElement(coffeeInfoDivDescription, coffeeItem.description);
         doAppendChild(coffeeInfoDiv, coffeeInfoDivDescription);
         classList(coffeeInfoDivDescription, 'marginLeft15');
+
+        const roastTypeElement = elementGenerator('h5');
+        setInnerTextToAnElement(roastTypeElement, coffeeItem.roastType);
+        doAppendChild(coffeeInfoDivDescription, roastTypeElement);
+        classList(roastTypeElement, 'row');
 
         // roastType
         let index = coffeeItem.minRoastTypeValue;
@@ -67,8 +76,8 @@ function main() {
             if (index <= coffeeItem.roastTypeValue) {
                 classList(roastedDiv, 'roundDivColored');
             }
-            doAppendChild(coffeeInfoDiv, roastedDiv);
-            classList(roastedDiv, 'marginLeft15');
+            doAppendChild(roastTypeElement, roastedDiv);
+            classList(roastedDiv, 'marginLeft5');
             index++;
         }
     })
@@ -82,7 +91,6 @@ function main() {
     plantageLink.setAttribute('target', '_blank');
     doAppendChild(mainDiv, plantageLink);
     classList(plantageLink, 'link');
-
 }
 
 main();

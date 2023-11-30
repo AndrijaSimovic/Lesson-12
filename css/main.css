@@ -10,6 +10,16 @@
     margin: 0px 0px 0px 15px;
 }
 
+.search {
+    margin: 0px 0px 15px 25px;
+    width: 200px;
+    height: 25px;
+    background-color: rgba(219, 182, 130, 0.87);
+    color: rgba(39, 23, 0, 0.87);
+    font-weight: 600;
+    border: 1,5px solid rgba(39, 23, 0, 0.87);
+}
+
 .marginLeft5 {
     margin-left: 5px;
 }
@@ -22,6 +32,10 @@
     margin-left: 25px;
 }
 
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
 .coffeeList {
     border: 2px solid rgba(39, 23, 0, 0.87);
     padding: 5px 10px;
@@ -31,7 +45,7 @@
 
 .coffeeMenu {
     margin: 10px 0px 15px 15px;
-    font-size: 23px;
+    font-size: 25px;
 }
 
 .row {
@@ -45,8 +59,8 @@
 }
 
 .coffeeImage {
-    width: 200px;
-    height: 150px;
+    width: 240px;
+    height: 180px;
     margin-left: 15px;
 }
 
