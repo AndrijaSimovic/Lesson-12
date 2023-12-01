@@ -2,6 +2,8 @@ import { welcomeText, workingTime, coffee, coffeeMenu } from "./constants.js"
 import { elementGenerator, doAppendChild, setInnerTextToAnElement, classList } from "./functions.js";
 
 function main() {
+    let coffees = [...coffee]; // Kopija
+
     // Coffee title icon
     const coffeeTitleIcon = elementGenerator('img');
     coffeeTitleIcon.src = "https://www.iconarchive.com/download/i134299/iconarchive/fat-sugar-food/Drink-Coffee.1024.png";
@@ -26,13 +28,22 @@ function main() {
     // coffeeMenu
     const coffeeMenuElement = elementGenerator('h4');
     setInnerTextToAnElement(coffeeMenuElement, coffeeMenu);
-    doAppendChild(list, coffeeMenuElement);
+    doAppendChild(rootChild, coffeeMenuElement);
     classList(coffeeMenuElement, 'coffeeMenu');
 
     // search
     const searchElement = document.getElementById('search');
     classList(searchElement, 'search');
-    searchElement.value = 'Search coffee...';
+    searchElement.setAttribute('placeholder', 'Search coffee...');
+
+    searchElement.addEventListener('input', (event) => {
+        const { target: { value } } = event;
+        if (value === "") {
+            coffees = [...coffee];
+        } else if (value !== "") {
+            coffees = coffee.filter((c) => c.title.toLowerCase().includes(value.toLowerCase()));
+        }
+    });
 
     // #region coffeeList
     coffee.forEach((coffeeItem) => {
@@ -71,13 +82,13 @@ function main() {
         // roastType
         let index = coffeeItem.minRoastTypeValue;
         while (index <= coffeeItem.maxRoastTypeValue) {
-            const roastedDiv = elementGenerator('div');
-            classList(roastedDiv, 'roundDiv');
+            const roastedSpan = elementGenerator('span');
+            classList(roastedSpan, 'roundDiv');
             if (index <= coffeeItem.roastTypeValue) {
-                classList(roastedDiv, 'roundDivColored');
+                classList(roastedSpan, 'roundDivColored');
             }
-            doAppendChild(roastTypeElement, roastedDiv);
-            classList(roastedDiv, 'marginLeft5');
+            doAppendChild(roastTypeElement, roastedSpan);
+            classList(roastedSpan, 'marginLeft5');
             index++;
         }
     })
